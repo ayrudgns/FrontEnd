@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Day2_이미지</title>
+</head>
+<body>
+    <!-- img 이미지 태그 : 인라인 요소. src 속성값에 이미지 위치 설정 (URL 주소 또는 로컬 위치 파일) -->
+    <!-- 이미지 파일 위치를 지정할 때, 상대경로와 절대경로 모두 가능하다. -->
+    <img src="포켓몬3.jpg" alt="포켓몬3">
+    <img src="../Images/피카츄1.jpg" alt="피카츄1">
+
+    <!-- 파일 위치와 파일명이 정확하지 않으면 이미지는 표시되지 않음. 이때 alt 속성값이 표시된다. -->
+    <img src="../Images/피카츄999.jpg" alt="피카츄999">
+
+    <hr>
+    <!-- 이미지 크기 너비만(또는 높이만) 설정 (너비, 높이 중 하나만 설정하는 경우에는 가로, 세로 비율 유지) -->
+    <!-- 너비는 width, 높이는 height -->
+    <img src="포켓몬3.jpg" alt="포켓몬3" style="width: 100px;">
+    <img src="../Images/피카츄1.jpg" alt="피카츄1" style="width: 100px;">
+
+    <!-- 이미지도 글자처럼 a태그(하이퍼링크)를 사용할 수 있다. -->
+    <a href="http://www.spiderman.com"target="_blank">
+        <img src="포켓몬3.jpg" alt="포켓몬3" style="width: 100px;"></a>
+
+    <hr>
+    <!-- 높이 height까지 설정하면 가로 세요 비율은 유지되지 않을 수도 있다. -->
+    <img src="포켓몬3.jpg" alt="포켓몬3" style="width: 100px;height: 100px;">
+    <img src="../Images/피카츄1.jpg" alt="피카츄1" style="width: 100px;height: 100px;">
+    
+</body>
+</html>
