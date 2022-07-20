@@ -5,12 +5,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
 
 * {
-    font-family: 'Gamja Flower', cursive;
+    font-family: 'Gamja Flower', cursive;   /* 모든(*) 글꼴 변경 */
     font-size: medium;
 }
 
 table {
-    border-top: 3px solid gray;
+    border-top: 3px solid gray;         /* 테이블의 위, 아래 Line 그려줌. */
     border-bottom: 3px solid gray;
 }
 
