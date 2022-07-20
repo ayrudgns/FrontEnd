@@ -1,12 +1,9 @@
-<!-- 오라클에서의 테이블과는 아무 관련이 없다. -->
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>Day2_표2</title>
     <style>
-        /* 2개의 태그(td, th) 선택 */
         td,th {
             padding: 10px;
             border: 1px solid gray;
@@ -35,15 +32,11 @@
 </head>
 
 <body>
-    <!-- 표를 작성할 때 사용하는 table 태그 (블록 요소) -->
-    <!-- 행(줄, row)은 tr 태그, 열(칸, column)은 td 태그, 제목은 th 태그 -->
-    <!-- 기본적으로 위에서 4개의 태그(table, tr, td, th) 사용, 이외에 thead, tbody 태그는 차후에 사용할 예정 -->
     <!-- table태그의 자식 요소는 tr, tr태그의 자식 요소는 td 또는 th -->
     <!-- table태그의 자손은 tr, td, th -->
 
     <h3>회원 목록 조회</h3>
-    <table style="width: 80%;margin: auto;">  <!-- tr 5개, td 4개 => 5줄 4칸! -->
-        <!-- margin: auto;는 외부 여백을 중앙에 놓이게 자동으로 설정한다. -->
+    <table style="width: 80%;margin: auto;">
         <tr>
             <!-- th태그 기본 스타일: 중앙 정렬, 글꼴 굵게 -->
             <th style="width: 15%;">회원번호</th>
