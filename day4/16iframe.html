@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Day4_iframe</title>
+
+    <style>
+        iframe {
+            width: 45%;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <!-- iframe("inline" frame): 현재 문서에 다른 문서를 포함시킨다. -->
+    <!-- iframe은 인라인 요소가 아니라, 인라인 블록 요소이다. 왜? width와 height를 설정할 수 있으니까! -->
+    <!-- 포함시킬 문서의 url(http주소, 파일명)은 src 속성으로 설정한다. -->
+    <h4>13form.html 문서 담기</h4>
+
+     <!-- root 경로(http://127.0.0.1:5501) 바로 아래에 있는 폴더 day3를 지정하는 경우 -->
+     <!-- 형제 폴더는 아래처럼 가져올 수도 있다. (Live Server가 아닌 파일로 열면 동작하지 않는다.)-->
+    <iframe src="/day3/13form.html" frameborder="0"></iframe>
+
+    <!-- 정석 방법 (한단계 상위폴더 이동 후 day3 폴더로 이동) -->
+    <iframe src="../day3/13form.html" frameborder="0"></iframe>
+
+    <h4>공유링크 퍼오기</h4>
+    <!-- 공유링크를 가져올 홈페이지에서 공유 => 퍼가기 => 복붙하기 -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.10201224932!2d127.02673091530983!3d37.50551207980931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3e349c7478b%3A0xfd1e8d6c65378a98!2z64W467O07YWUIOyVsOuwsOyEnOuNlCDshJzsmrgg6rCV64Ko!5e0!3m2!1sko!2skr!4v1658364712460!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/0JclfyCJiww" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- 가져올 url을 그냥 복붙하기 -->
+    <!-- 대부분의 주요 서비스 url은 보안상 위협이 될 수 있기 때문에 iframe 설정 요청을 거부한다. -->
+    <iframe src="https://www.w3schools.com/css/css_link.asp" frameborder="0"></iframe>
+    <iframe src="https://itgn.cafe24.com/index.php" frameborder="0"></iframe>
+</body>
+</html>
+

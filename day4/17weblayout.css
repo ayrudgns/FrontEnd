@@ -1,0 +1,66 @@
+.header {
+    background-color: #1f45ac;
+    color: white;
+    padding: 5px 10px;
+    margin-left: -10px;
+    margin-top: -20px;
+}
+
+h3 {
+    text-align: center;
+}
+
+.nav {
+    margin-left: -10px;
+}
+
+body {
+    background-color: gainsboro;
+    width: 100%;
+}
+
+ul {
+    /* border: 1px solid blue; */
+    list-style-type: none;
+    background-color: #2d3dc95c;
+    overflow: hidden;   /* 부모 요소(ul)가 자식 요소(li)를 감싼다. */
+    margin: auto;
+    margin-left: -10px;
+}
+
+ul > li {
+    float: left;        /* 왼쪽으로 쫘라락 붙인다. */
+    color: aliceblue;   /* li 태그에 설정한 색상이 a 태그에는 적용이 되지 않고, span 태그에는 적용이 되는 특이한 상황 */
+                          /* 상황에 따라 테스트를 하면서 적용해야 한다. */
+    /* border: 1px solid black; */
+}
+/* 위의 border로 영역 확인하기 : nav, ul 영역이 li 영역보다 작다. */
+
+ul > li a {
+    display: block;     /* a 태그는 인라인 요소인데 블럭 요소로 바꿔 줌. */
+    padding: 8px 25px;     /* 블럭 요소로 바뀌었으니 padding을 줄 수 있음. */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+ul > li a:hover {       /* 커서가 해당 영역에 올라왔을 때 */
+    background-color: black;
+    color: white;
+}
+
+.main {
+    background-color: gainsboro;
+    padding: 20px;
+    height: 500px;
+    margin-left: -10px;
+}
+
+.footer {
+
+    background-color: cornflowerblue;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-left: -10px;
+}

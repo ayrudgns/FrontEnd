@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>예제 만들기 2</title>
+    <link rel="stylesheet" href="17weblayout.css">
     <style>
-        body {
-            background-color: gainsboro;
-        }
-
         h1.top {
             background-color: blue;
             color: white;
@@ -36,7 +33,24 @@
 </head>
 
 <body>
-    <h1 style="text-align: center;">회원목록조회/수정</h1>
+    <div class="header">
+        <!-- header -->
+        <h3>쇼핑몰 회원관리 ver 1.0</h3>
+    </div>
+    <div class="nav">
+        <!-- nav -->
+        <ul>
+            <li><a href="14hrdform.html">회원등록</a></li>
+            <li><a href="15hrdtable.html">회원목록조회</a></li>
+            <li><a href="">회원매출조회</a></li>
+            <li><a href="">홈으로</a></li>
+            <!-- <li><span>홈으로</span></li> -->
+            <!-- li 태그에 적용한 속성을 span 태그가 적용을 받긴 하지만, a 태그를 쓸 수 없다. -->
+
+        </ul>
+    </div>
+
+    <h3 style="text-align: center;">회원목록조회/수정</h3>
     <table class="chart">
         <tr>
             <th class="coco">회원번호</th>
@@ -102,5 +116,12 @@
             <td class="coco">60</td>
         </tr>
     </table>
+
+    <hr>
+    <div class="footer">
+        <!-- footer -->
+        HRDKOREA Copyright&copy;2022 All rights reserved. Human Resources Development Service of Korea.
+
+    </div>
 </body>
 </html>

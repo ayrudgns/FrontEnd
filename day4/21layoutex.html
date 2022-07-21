@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>juleeusite</title>
+    <link rel="shortcut icon" href="../Images/몬스터볼1.ico"type="image/x-icon">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding: 10px;
+            background: #cce8d5;
+        }
+
+        /* 블로그 타이틀 */
+        .header {
+            padding: 30px;
+            text-align: center;
+            background: wheat;
+        }
+
+        .tit {
+            border: 1px double violet;
+            width: 280px;
+            margin: auto;
+        }
+
+        .tit:hover {
+            border: 4px dashed red;
+            cursor: pointer;
+        }
+
+        .header h1 {
+            font-size: 50px;
+        }
+
+        /* 네비게이션 바 */
+        .nav {
+            overflow: hidden;
+            background-color: rgb(20, 199, 160);
+            padding: 20px 24px;
+            display: block;
+        }
+
+        /* 네비 바의 링크 */
+        .nav a {
+            color: black;
+            font-weight: bold;
+            background-color: yellowgreen;
+            text-align: center;
+            padding: 20px 24px;
+            text-decoration: none;
+            border: 2px solid yellow;
+        }
+
+        .nav a:hover {
+            background-color: green;
+            font-weight: bold;
+        }
+
+        .mainimage {
+            border: 2px solid black;
+            text-align: center;
+            width: 80%;
+            margin: auto;
+            padding: auto;
+        }
+
+        .mainimage img {
+            width: 50%;
+        }
+        /* 왼쪽 컬럼 */
+        .leftcolumn {
+            float: left;
+            width: 80%;
+        }
+        
+        /* 오른쪽 컬럼 */
+        .rightcolumn {
+            float: left;
+            width: 20%;
+            padding-left: 20px;
+        }
+
+        .pimage {
+            background-color: darkcyan;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .pimage img {
+            width: 100%;
+        }
+        /* 카드에 이펙트 넣기 */
+        .card {
+            background-color: rgb(174, 200, 145);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .aboutimage {
+            width: 10px;
+        }
+
+        .aboutimage img {
+            width: 300px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* footer */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background-color: rgb(157, 157, 214);
+            margin-top: 20px;
+        }
+
+        @media screen and (max-width: 800px) {
+            .leftcolumn, .rightcolumn {
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .nav a {
+                float: none;
+                width: 100%;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="tit">juleeusite</h1>
+        <p>웹사이트 만들기 실습</p>
+    </div>
+    
+    <div class="nav" style="padding: auto; margin: auto; ">
+        <a href="../hrd/gallery.html" target="_blank" style="float: left;">갤러리</a>
+        <a href=""style="float: left;">실행없음</a>
+        <a href=""style="float: left;">홈으로</a>
+        <a href="" style="float: right;">고객페이지</a>
+    </div>
+
+<div class="row">
+    <div class="leftcolumn">
+            <div class="card">
+                <h2>안녕하세요!</h2>
+                <h5 >juleeus입니다.</h5>
+                <div class="mainimage"><img src="../Images/토게피달래기.gif.crdownload" alt="토게피달래기1"></div>
+                <p>빠라바밤</p>
+                <p>토게피가 울어서 달래주고 있어요.</p>
+            </div>
+        <div class="card">
+            <h2>안녕하세요!</h2>
+            <h5>juleeus입니다.</h5>
+            <div class="mainimage"><img src="../Images/파이리꼬부기.jfif" alt="파이리꼬부기"></div>
+            <p>빠라바밤</p>
+            <p>귀엽지 않나요?</p>
+            <form action="">
+                <input type="radio" name="cute" value="yes" id="lblyes" checked="checked">
+                <label for="lblyes">귀엽다. (default)</label>
+
+                <input type="radio" name="cute" value="no" id="lblno">
+                <label for="lblno">안귀엽다.</label>
+            </form>
+        </div>
+    </div>
+
+    <div class="rightcolumn">
+        <div class="card">
+            <h2>자기소개</h2>
+            <div class="aboutimage"><img src="../Images/꼬부기1.gif.crdownload" alt="꼬부기1"></div>
+            <p>자기소개는 없습니다.</p>
+        </div>
+        <div class="card">
+            <h3>Popular Post</h3>
+            <div class="pimage"><p><img src="../Images/이상해씨.gif" alt="이상해씨">인기글1</p></div>
+            <div class="pimage"><p><a href="../hrd/boom.html" target="_blank"><img src="../Images/메롱피카츄.jfif" alt="메롱피카츄"></a>인기글2</p></div>
+            <div class="pimage"><p><img src="../Images/토게피1.jpg" alt="토게피1">인기글3</p></div>
+        </div>
+        <div class="card">
+            <h3>Follow w3schools</h3>
+            <p><a href="https://www.w3schools.com/">w3schools 사이트로 이동</a></p>
+        </div>
+    </div>
+</div>
+
+    <div class="footer">
+        <h2>끝입니다.</h2>
+    </div>
+</body>
+</html>
