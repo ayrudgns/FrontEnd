@@ -29,7 +29,7 @@ ul {
 }
 
 ul > li {
-    float: left;        /* 왼쪽으로 쫘라락 붙인다. */
+    float: left;       /* 왼쪽으로 쫘라락 붙인다. */
     color: aliceblue;   /* li 태그에 설정한 색상이 a 태그에는 적용이 되지 않고, span 태그에는 적용이 되는 특이한 상황 */
                           /* 상황에 따라 테스트를 하면서 적용해야 한다. */
     /* border: 1px solid black; */

@@ -7,6 +7,8 @@
     <style>
         * {
             box-sizing: border-box;
+            /* box-model의 크기(너비) = width + padding * 2 + border + width * 2 */
+            /* box-sizing : border-box;는 width가 설정되는 값이 padding과 테두리를 포함한다. */
         }
 
         body {
@@ -109,10 +111,10 @@
             width: 300px;
         }
 
-        .row:after {
+        .row:after {            /* pseudo 요소 ::after, ::before */
             content: "";
             display: table;
-            clear: both;
+            clear: both;        /* float: left;를 clear */
         }
 
         /* footer */
@@ -123,6 +125,8 @@
             margin-top: 20px;
         }
 
+        /* 반응형 layout, 너비가 0px ~ 800px이면 아래의 스타일을 적용한다. */
+        /* 반응형 layout : flexbox를 많이 쓴다. */
         @media screen and (max-width: 800px) {
             .leftcolumn, .rightcolumn {
                 width: 100%;
@@ -130,6 +134,7 @@
             }
         }
 
+        /* 마찬가지로 반응형 layout이다. 너비가 0px ~ 800px이면 아래의 스타일을 적용한다. */
         @media screen and (max-width: 400px) {
             .nav a {
                 float: none;
