@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        table {
+            width: 80%;
+        }
+        td {
+            border: 1px solid tomato;
+            width: 10%;
+            padding: 7px 12px;
+            text-align: center;
+        }
+        th {
+            width: 13%;
+            background-color: tomato;
+            color: white;
+            padding: 7px 12px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <!-- 오늘의 스케쥴 -->
+    <table>
+        <tr id="time">
+            <!-- 시간 -->
+        </tr>
+        <tr id="todo">
+            <!-- 할일 -->
+        </tr>
+    </table>
+
+    <script>
+
+        const time = ['09:00', '11:00', '12:30', '14:00', '16:45'];
+        const todo = ['수업', '과제', '점심식사', '주간회의', '자료조사'];
+
+        // 자바스크립트 변수는 특수기호 $, _가 사용 가능하다.
+        let _time = '<th>TIME</th>';
+
+        const ftime = function(value) {         // 함수를 리터럴로 선언 (식별자 사용)
+            _time += `<td>${value}</td>`;
+        }
+
+        time.forEach(ftime)         // forEach
+        // forEach가 함수(메소드)인데, ftime도 함수이다. => 인자가 함수 => callback 함수
+            document.getElementById('time').innerHTML = _time;
+        
+        let _todo = '<th>TODO</th>';
+
+        todo.forEach((value) => _todo += `<td>${value}</td>`);      // 화살표 함수 사용
+            document.getElementById('todo').innerHTML = _todo;
+    </script>
+
+
+<!--
+    callback 함수 :
+    자바스크립트에서 많이 사용한다.
+    함수 또는 메소드 안의 매개변수가 함수인 경우, 그 매개변수로 쓰인 함수가 콜백함수이다.
+-->
+    <h4>callback 함수 테스트</h4>
+
+    <!-- location은 브라우저 객체 중 하나로 url 요청을 보낸다. -->
+    <!-- button의 onclick에는 자바스크립트 명령 쓰기 -->
+    <button id="btn1" onclick="location.href='https://www.naver.com'">클릭하세요[1]</button><br>
+
+    <!-- 실행할 명령이 많은 경우, 함수로 만들어서 onclick에 넣어준다. -->
+    <button id="btn2" onclick="func_btn2()">클릭하세요[2]</button><br>
+    <button id="btn3">클릭하세요[3]</button><br>
+    <button id="btn4">클릭하세요[4]</button><br>
+    <button id="btn5">클릭하세요[5Toggle]</button><br>
+        <p id="now">시간이 궁금해? '클릭하세요[4]' 버튼 클릭해!</p>
+    <script>
+
+        const func_btn2 = function() {
+            alert('두번째 버튼 : 네이버로 이동합니다.');
+            location.href='https://www.naver.com';
+        }
+
+        // addEventListener : html 요소에 발생하는 사용자 이벤트를 처리할 내용을 등록한다.
+        // 이벤트 핸들러 : 이벤트를 처리할 내용(함수) - 사용자 이벤트는 클릭, 마우스 움직이기, 키보드 입력 등
+        document.getElementById('btn3').addEventListener('click', func_btn2);
+
+        const func_btn4 = function() {
+            document.getElementById('now').innerHTML = new Date();
+            // new Date()는 '현재 날짜와 시간' 객체 생성 
+        }
+
+        let func_interval = setInterval(func_btn4, 1000);     // clearInterval()을 위해서 어떤 interval을 중지할 것인지 지정할 때 사용할 변수
+        // setInterval 동작하면서 그 실행을 변수로 참조함.
+        // func_interval();    // 주의! 오류 : func_interval()은 함수가 아니다.
+        
+        // setInterval(func_btn4, 1000);        // 해당 위치에서 실행하면 웹 페이지 실행 시 바로 동작한다.
+        
+        
+/*
+        document.getElementById('btn4').addEventListener('click', function() {
+            setInterval(func_btn4, 1000);       // 시간 단위 (ms), 1000이니까 1초      
+            // setInterval은 브라우저 window 객체의 메소드
+            // 1초마다 한번씩 func_btn4 실행하기
+        });
+        // 브라우저 객체 location, window 등은 node에서 실행되지 않는다.
+*/
+        // 위 주석을 화살표 함수로 바꾸고 setInterval 중지로 함수 바꾸기
+        document.getElementById('btn4').addEventListener('click', () => {
+            // setInterval(func_btn4, 1000);
+            clearInterval(func_interval);   // setInterval 중지 (아예 제거)
+        });
+
+        // 시간 표시 토글 기능 버튼
+        let state = true;
+        const func_btn5 = function() {
+            if(state) {		// 실행중..
+                alert('시간 표시 해제');
+                state = false;				// false 되고
+                clearInterval(func_interval);	// 인터벌 클리어
+            } else {			// 멈춰있는 중..
+                alert('시간 표시 시작');
+                state = true;				// true 되고
+                func_interval = setInterval(func_btn4, 1000);		// 인터벌 시작.
+                // 변수의 객체를 변경함. (const 데이터 타입은 불가능)
+            }
+        }
+        document.getElementById('btn5').addEventListener('click', func_btn5);
+        
+
+
+</script>
+</body>
+</html>
