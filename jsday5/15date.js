@@ -17,7 +17,7 @@ console.log(new Date().toISOString());      // 자바에서 LocalDateTime, ms �
 console.log('6. 로컬 형식 (운영체제에 설정된 국가에 따른 형식)');
 console.log(new Date().toLocaleString());
 
-console.log('*자바에서 시간은 long 타입으로, 1970-1-1 0시 기준으로 한다. (ms 값을 기준으로 얼마나 지났는지?)');
+console.log('* 자바에서 시간은 long 타입으로, 1970-1-1 0시 기준으로 한다. (ms 값을 기준으로 얼마나 지났는지?)');
 console.log(new Date().getTime());
 
 console.log('7. 날짜 / 시간 메소드');
