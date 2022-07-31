@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsday5_DOM1</title>
+</head>
+<body>
+    <h4>DOM</h4>
+    <div style="padding: 10px;width:70%;margin: auto;background-color: antiquewhite;">
+    <ul>
+        <li>
+            HTML 요소(태그)는 HTML 문서를 구성하며, 렌더링 과정에서 DOM을 구성하는 노드 객체로 변환된다.
+            노드는 계층구조에 포함되는 구성원이다.
+        </li>
+        <li>
+            HTML 요소의 구조 : &lt;시작태그 애트리뷰트이름="애트리뷰트값"&gt;컨텐츠&lt;/종료태그&gt;
+            이는 각각 애트리뷰트 노드, 텍스트컨텐츠 노드로 변환된다.
+        </li>
+        <li id="main">
+            컨텐츠가 태그일 때, 요소들은 중첩되며 이로 인해 계층구조가 형성되어 parent-child 관계가 형성된다.
+            HTML 요소들이 객체화된 모든 노드들이 트리 자료구조를 생성한다.
+        </li>
+        <li>
+            document 노드 : document 객체로 하나의 HTML 문서 전체를 가리키고 window 객체의 document 프로퍼티이기도 하다.
+            HTML 문서당 한 개만 존재하며, 루트 노드이고 다른 노드에 접근하기 위한 진입점이다.
+        </li>
+        <li>
+            element 노드 : HTML 요소를 가리키는 객체이다. 문서의 구조를 표현한다. (태그)
+        </li>
+        <li>
+            attribute 노드 : HTML 요소의 애트리뷰트를 가리킨다. 
+            요소 노드와는 단순한 연결로 구성된다. (단순한 참조값. 부모 자식관계로 참고하지 않는다.) 또한 계층구조에는 포함하지 않는다.
+        </li>
+        <li class="last">
+            text 노드 : HTML 요소의 텍스트 컨텐츠를 가리킨다. 
+            문서의 정보를 표현한다.
+            요소 노드의 자식 노드이다.
+        </li>
+        <li class="last">
+            **DOM을 통해 노드 객체의 부모, 형제, 자식을 탐색할 수 있고 HTML의 구조와 내용, 스타일을 동적으로 조작할 수 있다.
+        </li>
+    </ul>
+    <p>
+        <span id="main">p 태그의 자식요소 1</span>
+        <span>p 태그의 자식요소2</span>
+        <span>p 태그의 자식요소3</span>
+        <span>p 태그의 자식요소4</span>
+        <span>p 태그의 자식요소5<a href="">네이버</a></span>
+    </p>
+    <script>
+/*        
+        DOM에 접근하여 요소(태그)를 가져오는 메소드
+        1. document.getElementById('id속성값');            // 1개의 요소만 가져온다.
+        2. document.getElementsByClassName('class이름');   // n개의 요소를 가져온다. => 배열
+        3. document.getElementsByTagName('태그명');        // n개의 요소를 가져온다. => 배열
+        4. document.querySelector('선택자표기');           // 1개의 요소만 가져오며, 이때 선택자는 태그, 자식, 자손, id, class 모두 사용이 가능하다.
+        5. document.querySelectorAll('선택자표기');        // n개의 요소를 가져오며, 이때 선택자는 태그, 자식, 자손, id, class 모두 사용이 가능하다. => 배열
+
+        2, 3번은 무조건 return이 '배열'이다.
+        4번은 클래스명이나 태그명을 썼을 때, 해당 클래스나 태그가 1개이면 사용이 가능하다.
+        4, 5번이 짱이다. (메소드 사용의 범용성이 있기 때문에 편리하다.)
+*/
+
+        // 속성을 주는 방법이 2가지이다.
+        document.getElementById('main').style.color = 'green';
+        document.querySelector('#main').style.background = 'gainsboro';
+
+        console.log('last class 개수 : ' + document.querySelectorAll('.last').length);  // 개수 확인
+
+        // document.querySelector('.last').style.color = 'red'; // 하나만 적용된다.
+        document.querySelectorAll('.last').forEach(ele => {     // All은 배열이므로 forEach 활용!
+            ele.innerHTML = 'last class';       // 내용을 바꿔버림
+            ele.style.background = 'blue';
+            ele.style.color = 'gray';
+        });
+
+        document.querySelector('h4').innerHTML = 'DOM(Document Object Model)';
+        // 주의 ! h4 태그가 여러개인 경우, 첫번째 h4 태그에만 적용된다.
+
+        // document.getElementsByTagName('h4').style.color = 'red';
+        // 오류 : 메소드 리턴 타입이 배열이기 때문에 적용이 되지 않는다. => forEach 사용해야 함.
+
+        document.querySelector('li:nth-child(1)').style.color = 'hotpink';
+        // 선택자 기호 : 자식 요소 '>', 자손 요소 ' '            => 하 난 이게 제일 이해가 안돼..
+
+        document.querySelector('p > #main').style.color = 'orange';         // p태그 자식요소 중에서 main!
+        document.querySelector('p a').href='https://www.naver.com';         // p태그 자손요소 중에서 a태그!
+
+
+
+    </script>
+</body>
+</html>

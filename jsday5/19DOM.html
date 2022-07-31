@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsday5_DOM2</title>
+    <style>
+        .item {
+            color: blueviolet;
+            font-weight: bold;
+
+        }
+
+        .item01 {
+            background-color: antiquewhite;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div id="main">
+        <h4>DOM</h4>
+        <ul>
+            <li>트와이스</li>
+            <li>에스파</li>
+            <li>비비즈</li>
+
+        </ul>
+        
+        <ul>
+            <li>사나</li>
+            <li>나연</li>
+            <li>다현</li>
+            <li>정연</li>
+        </ul>
+
+    </div>
+
+    <script>
+        const main = document.querySelector('#main');       // document.getElementById('main')과 같음.
+        console.log(main);
+        console.log('1. childNodes');
+        console.log(main.childNodes);       // h4, ul, ul 앞뒤에 있는 엔터가 text이다.
+        console.log('2. children');
+        console.log(main.children);     // 1번 결과에서 text(엔터) 제외
+        console.log('3. 첫번째 자식');
+        console.log(main.firstChild);
+        console.log('4. 첫번째 자식요소');      // 주로 자식요소를 가져온다.
+        console.log(main.firstElementChild);
+        console.log('5. 마지막 자식');
+        console.log(main.lastChild);
+        console.log('6. 마지막 자식요소');
+        console.log(main.lastElementChild);
+
+        const childl = main.lastElementChild;
+        console.log('7. 마지막 자식의 컨텐츠');
+        console.log(childl.innerHTML);
+        console.log('8. 첫번째 자식의 형제 요소');
+        console.log(main.firstElementChild.nextElementSibling.innerHTML);
+
+        const new_ul = document.createElement('ul');        // 마지막 자식요소로 뒤에 추가하고 싶은 경우에 사용한다.
+        const list = '<li>newA</li><li>newB</li><li>newC</li><li>newD</li>';    // 내용 추가
+        new_ul.innerHTML = list;        // 담기
+        main.appendChild(new_ul);       // 출력하기
+        new_ul.className = 'item';      // 속성 주기
+        new_ul.classList.add('item01');     // 속성 주기
+
+        const old = main.children[1];       // main의 첫째 아들(ul태그)을 변수로 객체 저장
+        main.replaceChild(new_ul, old);     // new_ul을 old로 대체함.
+        main.appendChild(old);              // main의 자식에 old를 추가한다.
+
+
+    </script>
+    
+</body>
+</html>
