@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Day3_폼(form)</title>
+    <link rel="stylesheet" href="13member.css">
+    <script src="14member.js"></script>
+</head>
+<body>
+
+<div style="width: 70%; margin: auto;max-width: 600px;">
+    <h3>회원 가입</h3>
+    <form action="">
+        <table style="width: 100%;">
+            <tr>
+                <td><label for="lblname" class="title mpt">이름</label></td>
+
+                <td><input type="text" name="name" id="lblname"></td>
+            </tr>
+            <tr>
+                <td><label for="lblpass" class="title mpt">패스워드</label></td>
+                <td><input type="password" name="password" minlength="4" id="lblpass"></td> 
+            </tr>                                                                   
+            <tr>
+                <td><label for="lblemail" class="title mpt">이메일</label></td>
+                <td><input type="email" name="email" id="lblemail"></td>         
+            </tr>
+            <tr>
+                <td><label for="lblage" class="title mpt">나이</label></td>
+
+                <td><input type="number" name="age" value="19" min="15" max="99" id="lblage"></td> 
+            </tr>                                                              
+            <tr>
+                <td><label for="lbladdr" class="title mpt">지역(주소)</label></td>
+                <td>
+                    <select name="addr" id="lbladdr">       
+                        <option value="서울">서울</option>
+                        <option value="인천">인천</option>
+                        <option value="대전" selected="selected">대전</option>     
+                        <option value="광주">광주</option>
+                        <option value="부산">부산</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="" class="title">성별</label></td>
+                <td>
+ 
+                    <input type="radio" name="gender" value="male" id="lblmale">
+                    <label for="lblmale" class="mpt">남성</label>
+
+                    <input type="radio" name="gender" value="female" id="lblfemale">
+                    <label for="lblfemale" class="mpt">여성</label>
+                    <input type="radio" name="gender"
+                                checked="checked" value="unknown" id="lblunknown">
+                    <label for="lblunknown" class="mpt">모름</label>      
+                </td>
+            </tr>
+            <tr>
+                <td><label for="" class="title">취미</label></td>
+                <td>
+
+                    <input type="checkbox" name="hobby" value="축구" id="lblsoccer"><label for="lblsoccer" class="mpt">축구</label>
+                    <input type="checkbox" name="hobby" value="농구" id="lblbasketball"><label for="lblbasketball" class="mpt">농구</label>
+                    <input type="checkbox" name="hobby" value="달리기" id="lblrun"><label for="lblrun" class="mpt">달리기</label>
+                    <input type="checkbox" name="hobby" value="수영" id="lblswim" checked="checked"><label for="lblswim" class="mpt">수영</label>
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+
+                    <button onclick="valid_check()" type="button">가입하기</button> 
+                    <button type="reset">다시쓰기</button>   
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</div>
+
+</html>
